@@ -239,6 +239,20 @@ class rw_inspection extends CI_Controller {
         $this->load->view('rw_inspection/print', $data);
     }
 
+    function excel() {
+        $this->load->model('model_rw_inspection_excel');
+        
+        $id = $this->input->post('id'); 
+        
+        $data['rw_inspection'] = $this->model_rw_inspection->select_by_id($id); 
+        $data['rw_image_category'] = $this->model_rw_inspection->select_rw_image_category_by_rw_inspection_id($id);
+      
+        // $this->load->model('model_drop_test_list_excel'); 
+        $this->model_rw_inspection_excel->initialize($data['rw_inspection'], $data['rw_image_category']);
+       
+        $this->model_rw_inspection_excel->download(); 
+    }
+    
     function print_summary() {
         $id = $this->input->post('id');
         $this->load->library('pdf');

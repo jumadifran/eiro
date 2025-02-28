@@ -291,3 +291,16 @@ function rw_inspection_submit() {
         $.messager.alert('Inspection Warning', 'No Inspection or no item to be submitted', 'warning');
     }
 }
+
+function rw_inspection_excel() {
+    console.log("Excel button clicked");
+    var row = $('#rw_inspection').datagrid('getSelected');
+    
+    if (row !== null) {
+        open_target('post', base_url + 'rw_inspection/excel', {
+            id: row.id
+        }, 'box_iframe');
+    } else {
+        $.messager.alert('No Inspection List Selected', 'Please Select Inspection List', 'warning');
+    }
+}

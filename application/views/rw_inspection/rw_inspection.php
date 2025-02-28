@@ -27,8 +27,14 @@
       //  }
         //if (in_array("Delete", $action)) {
             ?>
+            <a href="#" id="rw_inspection_print_print_id" class="easyui-menubutton" data-options="menu:'#rw_inspection_print',iconCls:'icon-print'">Print</a>
+            <div id="rw_inspection_print" style="width:150px;">
+                    <div data-options="iconCls:'icon-view'"   onclick="print_rw_inspection('single')">View</div>
+                    <!-- <div data-options="iconCls:'icon-pdf'"  onclick="print_drop_test_list('single', 'pdf')">PDF</div> -->
+                    <div data-options="iconCls:'icon-xls'" onclick="rw_inspection_excel()">Excel</div>
+                </div>
 
-            <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-print" plain="true" onclick="print_rw_inspection('single')"></a>
+            <!-- <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-print" plain="true" onclick="print_rw_inspection('single')"></a> -->
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-redo" plain="true" id="rw_inspection_submit_id" onclick="rw_inspection_submit()">Submit</a>
             <!--<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-print" plain="true" onclick="print_rw_inspection('detail')">Print Summary</a>-->
             <?php
