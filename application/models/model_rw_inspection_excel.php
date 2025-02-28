@@ -59,8 +59,11 @@ class model_rw_inspection_excel extends CI_Model {
         $this->sheet->getDefaultStyle()->getFont()->setName('Times New Roman')->setSize(14);
 
         //rw Inspection
-        $this->sheet->setCellValue('B1', "RW Inspection")
-        ->mergeCells('B1:F3'); 
+        $this->sheet->setCellValue('B1', "E.I.R.O\nEBAKO INSPECTION REPORT ONLINE")
+        ->mergeCells('B1:F3'); ;
+        $this->sheet->getStyle('B1')->getAlignment()->setWrapText(true);
+        
+        
     
     // Mengatur font agar bold dan lebih besar
     $this->sheet->getStyle('B1:F3')->getFont()->setBold(true)->setSize(14);

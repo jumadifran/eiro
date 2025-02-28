@@ -44,7 +44,7 @@ $my_pdf->AddPage();
             </td>
             <td colspan="3" align='center' width='50%'>
                 <?php
-                $image = $_SERVER["HTTP_REFERER"] . 'files/logo.png';
+                $image = $_SERVER["HTTP_REFERER"] . '/files/logo.png';
                 echo "<img src='" . $image . "' width='100'>";
                 ?>
             </td>
